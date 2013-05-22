@@ -3,7 +3,7 @@ Background
 
 Recently Samsung announced [BLE SDK](http://developer.samsung.com/ble) for supporting their devices to communicate 
 with 'Smart' device using bluetooth low energy protocol. However, the support is only limited to their mobile devices
-running with Android 4.2.x (Level 17). To our best knowledge, Galaxy S4 comes with 4.2 which means the current main trend devices including Galaxy S3, Note 2 (currently latest official update is Jellybean 4.1.x - Level 16) won't be able to get the support at this point. It really depends on when Samsung will push out update for these 'old' devices to make them work with latest SDK.
+running with Android 4.2.x (Level 17). To my best knowledge, Galaxy S4 is the only one comes with 4.2 which means the current main trend devices including Galaxy S3, Note 2 (currently latest official update is Jellybean 4.1.x - Level 16) won't be able to get the support at this point. It really depends on when Samsung will push out update for these 'old' devices to make them work with latest SDK.
 
 With an assigned task, I started to exploit BLE support on Android. Before this, I had no knowledge at all on Android
 development. I did some iOS development with the BLE stack provided by Apple though. Unlike the case with Apple, I found out
