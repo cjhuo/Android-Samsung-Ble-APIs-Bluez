@@ -47,5 +47,9 @@ Getting the API out
 All I want to do is the jar file of Samsung's API which they claims to have provided before. To respect others work I only share the compiled API jar here and make a test app by my own.
 
 
+How to use the API to make a app
+================================
 
-Thanks to the great tools [dex2jar](https://code.google.com/p/dex2jar/), I have managed to converted the 
+Knowledgement
+=============
+Thanks to the great tools [dex2jar](https://code.google.com/p/dex2jar/), I have managed to get the API out
