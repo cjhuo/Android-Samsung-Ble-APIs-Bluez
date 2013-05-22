@@ -47,9 +47,21 @@ Getting the API out
 All I want to do is the jar file of Samsung's API which they claims to have provided before. To respect others work I only share the compiled API jar here and make a test app by my own.
 
 
-How to use the API to make a app
-================================
+Several things to be clarified before jumping to my sample code:
+================================================================
+1. I am a newbie in Android. Here I am just trying to share what I knew and what I learned. Please let me know if anybody discover any bugs on my code. I am sure most people who saw this repo are way better than me on mobile app development. I like to see your comments.
+2. The code is tested with EcoBT board designed at [UCI Embedded System Lab](http://embedded.ece.uci.edu/) using TI's CC2540 chip. It probably won't work out of box with your board since yours might have different service profile implemented. You can just pick up the logic inside and try to make an app with your own board by specifying different services and characteristics. You can also contact me if you have questions. I will try to answer questions as I can. You can also contact me if you are interested in obtaining a board from us for further developement or just want to have a reall hardware to test the code. It will help our lab since our lab relies on these little boards to feed students like me. 
+3. Please contact Samsung if you are trying to use the API on a commercial product as I don't know whether the API comes with a license or not. Please take your own risk if you are not letting them know.
 
-Knowledgement
+
+Things to pay attention
+==================================
+1. Unlike 2.0 which rely only ```java BluetoothGatt``` profile class for connecting LE devices, in 1.0 it also override the standard ```java BluetoothAdapter``` and ```java BluetoothDevice``` classes for LE devices discovery and connection status checking. So make sure you put the API jar file at the top order in 'Build class path' so that the system will use the classes in the jar instead of the standard classes.
+2. Implement your own BLE Service profiles by extending ```java BluetoothLEClientService``` and put them into an ```java ArrayList```. And extends ```java BluetoothLEClientProfile``` to register these service profiles using ```java BluetoothLEClientProfile.registerLEProfile(arrayListOfServiceProfiles)```.
+3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```java BluetoothDevice.BOND_BONDED``` before you call ```java BluetoothLEClientProfile.connectLEDevice(LEDevice)```
+4. Have fun!
+
+
+Acknowledgement
 =============
-Thanks to the great tools [dex2jar](https://code.google.com/p/dex2jar/), I have managed to get the API out
+Thanks to the great tools [dex2jar](https://code.google.com/p/dex2jar/), with which I have managed to get the API out
