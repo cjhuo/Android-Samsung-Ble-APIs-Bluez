@@ -29,7 +29,7 @@ developement. Altough APIs on both the platforms are provided by Samsung they ar
 
 S3's API was developed based on stack from [Bluez](http://www.bluez.org/). I guess HTC's APIs is also based on Bluez but not sure.
 
-S4's API is developed based on stack from broadcom called Bluedroid. I guess Samsung the reason why Samsung made this change
+S4's API is developed based on stack from Broadcom called Bluedroid. I guess the reason why Samsung made this change
 is because Samsung's mobile devices reply on Broadcom's bluetooth chip and Broadcom claims to 
 [provide their bluetooth stack in Android 4.2 for free](http://www.broadcom.com/press/release.php?id=s721534).
 
@@ -64,9 +64,9 @@ Things to pay attention
 
 Problems (Please Suggest if you know the solution!)
 ===================================================
-1. One thing that I found out is everytime the phone is trying to bond with LE device, The 'Bluetooth Pairing Request' window gets poped up which never happened in API 2.0 (Well, 2.0 has its own problem though...).
+1. One thing that I found out is everytime the phone is trying to bond with LE device, The 'Bluetooth Pairing Request' window gets poped up which never happens in API 2.0 (Well, 2.0 has its own problem though...).
 
 
 Acknowledgement
 =============
-Thanks to the great tools [dex2jar](https://code.google.com/p/dex2jar/), with which I have managed to get the API out
+Thanks to the great tool [dex2jar](https://code.google.com/p/dex2jar/), with which I have managed to get the API out
