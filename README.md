@@ -56,10 +56,15 @@ Several things to be clarified before jumping to my sample code:
 
 Things to pay attention
 ==================================
-1. Unlike 2.0 which rely only ```java BluetoothGatt``` profile class for connecting LE devices, in 1.0 it also override the standard ```java BluetoothAdapter``` and ```java BluetoothDevice``` classes for LE devices discovery and connection status checking. So make sure you put the API jar file at the top order in 'Build class path' so that the system will use the classes in the jar instead of the standard classes.
-2. Implement your own BLE Service profiles by extending ```java BluetoothLEClientService``` and put them into an ```java ArrayList```. And extends ```java BluetoothLEClientProfile``` to register these service profiles using ```java BluetoothLEClientProfile.registerLEProfile(arrayListOfServiceProfiles)```.
-3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```java BluetoothDevice.BOND_BONDED``` before you call ```java BluetoothLEClientProfile.connectLEDevice(LEDevice)```
+1. Unlike 2.0 which rely only ```BluetoothGatt``` profile class for connecting LE devices, in 1.0 it also override the standard ```BluetoothAdapter``` and ```BluetoothDevice``` classes for LE devices discovery and connection status checking. So make sure you put the API jar file at the top order in 'Build class path' so that the system will use the classes in the jar instead of the standard classes.
+2. Implement your own BLE Service profiles by extending ```BluetoothLEClientService``` and put them into an ``` ArrayList```. And extends ```BluetoothLEClientProfile``` to register these service profiles using ```BluetoothLEClientProfile.registerLEProfile(arrayListOfServiceProfiles)```.
+3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```BluetoothDevice.BOND_BONDED``` before you call ```BluetoothLEClientProfile.connectLEDevice(LEDevice)```
 4. Have fun!
+
+
+Problems (Please Suggest if you know the solution!)
+===================================================
+1. One thing that I found out is everytime the phone is trying to bond with LE device, The 'Bluetooth Pairing Request' window gets poped up which never happened in API 2.0 (Well, 2.0 has its own problem though...).
 
 
 Acknowledgement
