@@ -32,8 +32,8 @@ Reason why I dig out the APIs on S3
 ===================================
 Of course first reason is because I want to have the little board built from our lab with TI's CC2540 BLE chip talk to not only S4 but also S3 that I have. Indicated from the SDK API Guide Samsung provided on their SDK website, they provided the API that works with Bluez stack in the past which they called verion 1.0. And now the APIs on S4 is 2.0. However, I couldn't find the place whey they used to release their API with version 1.0. In fact, I saw developers kept asking for it from the time Galaxy S3 was introduced which claims Smart-Ready.
 
-Clues
-=====
+Clues from Play Store
+=====================
 Fortunately, I found out some apps on play store that make use of the BLE API from Samsung such [Bluetooth Smart Scanner](https://play.google.com/store/apps/details?id=com.semilink.smartscanner&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5zZW1pbGluay5zbWFydHNjYW5uZXIiXQ..) and [Pebble](https://play.google.com/store/apps/details?id=com.semilink.pebble.pxpmain&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5zZW1pbGluay5wZWJibGUucHhwbWFpbiJd) from Semilink, and [nRF utility](https://play.google.com/store/apps/details?id=com.nordic.nordicbleapp&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5ub3JkaWMubm9yZGljYmxlYXBwIl0.) from nordic. It shows me that the API must have been published, but probably not publicly. I don't know whether those company who got the API has contract with Samsung or something. But I decided to get the API out and give it a try.
 
 Getting the API out
@@ -44,7 +44,7 @@ All I want to do is the jar file of Samsung's API which they claims to have prov
 Several things to be clarified before jumping to my sample code:
 ================================================================
 1. I am a newbie in Android. Here I am just trying to share what I knew and what I learned. Please let me know if anybody discover any bugs on my code. I am sure most people who saw this repo are way better than me on mobile app development. I like to see your comments.
-2. The code is tested with EcoBT board designed at [UCI Embedded System Lab](http://embedded.ece.uci.edu/) using TI's CC2540 chip. It probably won't work out of box with your board since yours might have different service profile implemented. You can just pick up the logic inside and try to make an app with your own board by specifying different services and characteristics. You can also contact me if you have questions. I will try to answer questions as I can. You can also contact me if you are interested in obtaining a board from us for further developement or just want to have a reall hardware to test the code. It will help our lab since our lab relies on these little boards to feed students like me. 
+2. The code is tested with EcoBT board designed at [UCI Embedded System Lab](http://embedded.ece.uci.edu/) using TI's CC2540 chip. It probably won't work out of box with your board since yours might have different service profile implemented. You can just pick up the logic inside and try to make an app with your own board by specifying different services and characteristics. You can also contact me if you have questions. I will try to answer questions as I can. You can also contact me if you are interested in obtaining a board from us for further developement or just want to have a real hardware to test the code. It will help our lab since our lab relies on these little boards to feed students like me. 
 3. Please contact Samsung if you are trying to use the API on a commercial product as I don't know whether the API comes with a license or not. Please take your own risk if you are not letting them know.
 
 
@@ -55,6 +55,11 @@ Things to pay attention
 3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```BluetoothDevice.BOND_BONDED``` before you call ```BluetoothLEClientProfile.connectLEDevice(LEDevice)```
 4. Have fun!
 
+Demos
+=====
+Here is the short video demo to show communication between Galaxy S3 and the board from our lab. The board is designed based on TI's CC2540 BLE chip and has a built-in accelerometer and many other features and great scalability with an easy-to-use interface. In the video it demonstrates the capability of connecting to an ECG board also designed by our lab to do remote controlling and monitoring of human ECG recording (Yes, there are actually 2 tiny boards in side the small black box for this job!)
+
+Link to Video: [Demonstration with Galaxy S3](http://www.youtube.com/watch?v=wfyTl7bEg8g)
 
 Problems (Please Suggest if you know the solution!)
 ===================================================
