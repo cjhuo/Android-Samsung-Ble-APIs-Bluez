@@ -17,7 +17,7 @@ But here we focus on the test devices I got.
 Difference on S3 and S4
 =======================
 What I got for test developement are both coming from Samsung who claims has the most market share in Android world, 
-the Galaxy S3 (IGH-747) and Galaxy S4 (I9500). I got the S3 with contract upgrade from AT&T last year (Sorry for leaving
+the Galaxy S3 (SGH-I747) and Galaxy S4 (I9500). I got the S3 with contract upgrade from AT&T last year (Sorry for leaving
 Apple, but S3 was way cheaper than iPhone 5 at that time and I wanted to save the cost) and got the S4 recently for the test 
 developement. Altough APIs on both the platforms are provided by Samsung they are using different stack underneath (mentioned in their BLE SDK API Guide). 
 
