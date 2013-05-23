@@ -52,14 +52,14 @@ Things to pay attention
 ==================================
 1. Unlike 2.0 which rely only ```BluetoothGatt``` profile class for connecting LE devices, in 1.0 it also override the standard ```BluetoothAdapter``` and ```BluetoothDevice``` classes for LE devices discovery and connection status checking. So make sure you put the API jar file at the top order in 'Build class path' so that the system will use the classes in the jar instead of the standard classes.
 2. Implement your own BLE Service profiles by extending ```BluetoothLEClientService``` and put them into an ``` ArrayList```. And extends ```BluetoothLEClientProfile``` to register these service profiles using ```BluetoothLEClientProfile.registerLEProfile(arrayListOfServiceProfiles)```.
-3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```BluetoothDevice.BOND_BONDED``` before you call ```BluetoothLEClientProfile.connectLEDevice(LEDevice)```
+3. 1.0 rely on bonding to connect LE device. Make sure you create a bond with the device first and make sure the bond state is ```BluetoothDevice.BOND_BONDED``` before you call ```BluetoothLEClientProfile.connectLEDevice(LEDevice)```.
 4. Have fun!
 
-Demos
-=====
-Here is the short video demo to show communication between Galaxy S3 and the board from our lab. The board is designed based on TI's CC2540 BLE chip and has a built-in accelerometer and many other features and great scalability with an easy-to-use interface. In the video it demonstrates the capability of connecting to an ECG board also designed by our lab to do remote controlling and monitoring of human ECG recording (Yes, there are actually 2 tiny boards in side the small black box for this job!)
-
+Video Demos
+===========
+1. Here is the short video demo to show communication between Galaxy S3 and the board from our lab. The board is designed based on TI's CC2540 BLE chip and has a built-in accelerometer and many other features and great scalability with an easy-to-use interface. In the video it demonstrates the capability of connecting to an ECG board also designed by our lab to do remote controlling and monitoring of human ECG recording (Yes, there are actually 2 tiny boards in side the small black box for this job!).
 Link to Video: [Demonstration with Galaxy S3](http://www.youtube.com/watch?v=wfyTl7bEg8g)
+2. More to come
 
 Problems (Please Suggest if you know the solution!)
 ===================================================
