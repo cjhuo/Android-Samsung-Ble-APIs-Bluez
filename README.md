@@ -65,7 +65,7 @@ Problems & Fixes
 ===================================================
 1. (Updated 06/07/13) One thing that I found out is everytime the phone is trying to bond with LE device, The 'Bluetooth Pairing Request' window gets poped up which never happens in API 2.0 (Well, 2.0 has its own problem though...).
 
-- Fix: The problem is caused by a parameter of GAP Bond Manager from firmware settings. To avoid the passkey request pop-up windows, set the value of the parameter 'GAPBOND_PAIRING_MODE' to 'GAPBOND_PAIRING_MODE_WAIT_FOR_REQ (0x00)'. Flash your device with new firmware and try to connect with the S3. You won't see the pairing windows any more when connection is being established. This solution only works with device built with TI's CC2540 chip.
+- Fix: The problem is caused by a parameter of GAP Bond Manager from firmware settings. To avoid the passkey request pop-up windows, you can disable the pairing from your firmware side. For example, if in your firmware you set the paramter like ```GAPBondMgr_SetParameter( GAPBOND_PAIRING_MODE, sizeof ( uint8 ), &pairMode );```, then you should change the value of ```pairMode``` to ```GAPBOND_PAIRING_MODE_NO_PAIRING (0x00)```. Flash your device with new firmware and try to connect with the S3. You won't see the pairing windows any more when connection is being established. This solution only works with device built with TI's CC2540 chip.
 
 (Please report any problem you found and suggest any solution you know!)
 
