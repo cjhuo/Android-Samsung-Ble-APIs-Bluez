@@ -19,7 +19,7 @@ Difference on S3 and S4
 What I got for test developement are both coming from Samsung who claims has the most market share in Android world, 
 the Galaxy S3 (SGH-I747) and Galaxy S4 (I9500). I got the S3 with contract upgrade from AT&T last year (Sorry for leaving
 Apple, but S3 was way cheaper than iPhone 5 at that time and I wanted to save the cost) and got the S4 recently for the test 
-developement. Altough APIs on both the platforms are provided by Samsung they are using different stack underneath (mentioned in their BLE SDK API Guide). 
+developement. Although APIs on both the platforms are provided by Samsung they are using different stack underneath (mentioned in their BLE SDK API Guide). 
 
 S3's API was developed based on stack from [Bluez](http://www.bluez.org/). I guess HTC's APIs is also based on Bluez but not sure.
 
@@ -30,7 +30,7 @@ is because Samsung's mobile devices reply on Broadcom's bluetooth chip and Broad
 
 Reason why I dig out the APIs on S3
 ===================================
-Of course first reason is because I want to have the little board built from our lab with TI's CC2540 BLE chip talk to not only S4 but also S3 that I have. Indicated from the SDK API Guide Samsung provided on their SDK website, they provided the API that works with Bluez stack in the past which they called verion 1.0. And now the APIs on S4 is 2.0. However, I couldn't find the place whey they used to release their API with version 1.0. In fact, I saw developers kept asking for it from the time Galaxy S3 was introduced which claims Smart-Ready.
+Of course first reason is because I want to have the little board built from our lab with TI's CC2540 BLE chip talk to not only S4 but also S3 that I have. Indicated from the SDK API Guide Samsung provided on their SDK website, they provided the API that works with Bluez stack in the past which they called verion 1.0. And now the APIs on S4 is 2.0. However, I couldn't find the place where they used to release their API with version 1.0. In fact, I saw developers kept asking for it from the time Galaxy S3 was introduced which claims Smart-Ready.
 
 Clues from Play Store
 =====================
