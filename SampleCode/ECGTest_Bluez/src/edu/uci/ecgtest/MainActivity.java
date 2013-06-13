@@ -401,7 +401,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				final Runnable rnb = new Runnable() {
 					public void run() {
 						if (MainActivity.this.mMainService != null) {
-							Log.d(TAG, "BondState: " + MainActivity.this.mDevice.getBondState());
+							//Log.d(TAG, "BondState: " + MainActivity.this.mDevice.getBondState());
 							Log.d(TAG, "LE Connected State: " + MainActivity.this.mMainService.getProfileState());
 							if (MainActivity.this.mDevice.getBondState() == BluetoothDevice.BOND_NONE) {
 								MainActivity.this.mDevice.createBond();

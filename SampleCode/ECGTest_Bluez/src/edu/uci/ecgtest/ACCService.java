@@ -1,5 +1,7 @@
 package edu.uci.ecgtest;
 
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
@@ -41,13 +43,21 @@ public class ACCService extends BluetoothLEClientService {
 		// onWatcherValueChanged method won't be triggered if you didn't call
 		// getCharValue on this callback function. Tested
 		byte[] data = paramBluetoothLEClientChar.getCharVaule(); 
-		//got 12 bytes for all x, y, z, index 1, 5, 6, 7, 9, 10 is padding bytes??
 		
-		//byte[] pureData = {data[0], data[2], data[3], data[4], data[8], data[11]};
-		processXYZ(data);
+		// decode data first before process, data was encoded using UTF-8
+		String decodedString = null;
+		try {
+			decodedString = new String(data, "UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		byte[] decodedData = new BigInteger(decodedString, 16).toByteArray();
+		processXYZ(decodedData);
 		
+
 		Log.d(TAG, "Value changed event caught from characteristic: " + uuid
-				+ " of value: " + data.toString());
+				+ " of value: " + decodedString);//data.toString());
 		Intent localIntent = new Intent(ACC_VALUE_REFRESH);
 		localIntent.putExtra("X", this.x);
 		localIntent.putExtra("Y", this.y);
@@ -58,12 +68,12 @@ public class ACCService extends BluetoothLEClientService {
 	private void processXYZ(byte [] data){
 		ByteBuffer bf = ByteBuffer.wrap(data);
 		bf.order(ByteOrder.LITTLE_ENDIAN);
-		int temp = bf.getInt();
-		this.x = (0.0f + (temp >>> 20))/1000;  //first 12 bits
-		temp = bf.getInt();
-		this.y = (0.0f + (temp >>> 20))/1000;
-		temp = bf.getInt();
-		this.z = (0.0f + (temp >>> 20))/1000;
+		short temp = bf.getShort();
+		this.x = (0.0f + (temp >> 4))/1000;  //first 12 bits
+		temp = bf.getShort();
+		this.y = (0.0f + (temp >> 4))/1000;
+		temp = bf.getShort();
+		this.z = (0.0f + (temp >> 4))/1000;
 	}
 	
 	private int toInt(char charValue){
