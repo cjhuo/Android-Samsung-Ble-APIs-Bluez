@@ -24,13 +24,13 @@ developement. Although APIs on both the platforms are provided by Samsung they a
 S3's API was developed based on stack from [Bluez](http://www.bluez.org/). I guess HTC's APIs is also based on Bluez but not sure.
 
 S4's API is developed based on stack from Broadcom called Bluedroid. I guess the reason why Samsung made this change
-is because Samsung's mobile devices reply on Broadcom's bluetooth chip and Broadcom claims to 
+is because Samsung's mobile devices rely on Broadcom's bluetooth chip and Broadcom claims to 
 [provide their bluetooth stack in Android 4.2 for free](http://www.broadcom.com/press/release.php?id=s721534).
 
 
 Reason why I dig out the APIs on S3
 ===================================
-Of course first reason is because I want to have the little board built from our lab with TI's CC2540 BLE chip talk to not only S4 but also S3 that I have. Indicated from the SDK API Guide Samsung provided on their SDK website, they provided the API that works with Bluez stack in the past which they called verion 1.0. And now the APIs on S4 is 2.0. However, I couldn't find the place where they used to release their API with version 1.0. In fact, I saw developers kept asking for it from the time Galaxy S3 was introduced which claims Smart-Ready.
+Of course the first reason is because I want to have the little board built from our lab with TI's CC2540 BLE chip talk to not only S4 but also S3 that I have. Indicated from the SDK API Guide Samsung provided on their SDK website, they provided the API that works with Bluez stack in the past which they called verion 1.0. And now the APIs on S4 is 2.0. However, I couldn't find the place where they used to release their API with version 1.0. In fact, I saw developers kept asking for it from the time Galaxy S3 was introduced which claims Smart-Ready.
 
 Clues from Play Store
 =====================
@@ -74,4 +74,4 @@ Problems & Fixes
 
 Acknowledgement
 =============
-Thanks to the great tool [dex2jar](https://code.google.com/p/dex2jar/), with which I have managed to get the API out
+Thanks to the great tool [dex2jar](https://code.google.com/p/dex2jar/), with which I have managed to get the API out.
